@@ -1,0 +1,15 @@
+artifact_uri: file:///home/cady/Project-Build-an-ML-Pipeline-Starter/mlruns/0/a3d3f45e174741f0917d4a6f1b38ad81/artifacts
+end_time: 1729031183782
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a3d3f45e174741f0917d4a6f1b38ad81
+run_name: powerful-mole-428
+run_uuid: a3d3f45e174741f0917d4a6f1b38ad81
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1729031095864
+status: 4
+tags: []
+user_id: cady

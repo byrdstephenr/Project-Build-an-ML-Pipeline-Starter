@@ -1,0 +1,15 @@
+artifact_uri: file:///home/cady/Project-Build-an-ML-Pipeline-Starter/mlruns/0/e50fe8f2de574f1e871005598a216288/artifacts
+end_time: 1729031349080
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e50fe8f2de574f1e871005598a216288
+run_name: calm-kit-228
+run_uuid: e50fe8f2de574f1e871005598a216288
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1729031324856
+status: 4
+tags: []
+user_id: cady
