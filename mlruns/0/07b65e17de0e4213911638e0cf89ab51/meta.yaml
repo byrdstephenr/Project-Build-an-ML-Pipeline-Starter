@@ -1,0 +1,15 @@
+artifact_uri: file:///home/cady/Project-Build-an-ML-Pipeline-Starter/mlruns/0/07b65e17de0e4213911638e0cf89ab51/artifacts
+end_time: 1729034445796
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 07b65e17de0e4213911638e0cf89ab51
+run_name: auspicious-auk-81
+run_uuid: 07b65e17de0e4213911638e0cf89ab51
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1729034416496
+status: 4
+tags: []
+user_id: cady

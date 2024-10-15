@@ -1,0 +1,15 @@
+artifact_uri: file:///home/cady/Project-Build-an-ML-Pipeline-Starter/mlruns/0/23ce15cfbdba4cdb941288e645e5e104/artifacts
+end_time: 1729033598245
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 23ce15cfbdba4cdb941288e645e5e104
+run_name: respected-boar-250
+run_uuid: 23ce15cfbdba4cdb941288e645e5e104
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1729033544676
+status: 4
+tags: []
+user_id: cady
