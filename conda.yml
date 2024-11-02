@@ -3,7 +3,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.9.15
+  - python=3.9
   - jupyterlab=3.0.12
   - mlflow=2.8.1
   - numpy=1.22.4

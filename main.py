@@ -76,7 +76,7 @@ def go(config: DictConfig):
                     "kl_threshold": config['data_check']['kl_threshold'],
                     "min_price": config['etl']['min_price'],
                     "max_price": config['etl']['max_price']
-                }
+                },
             )
             pass
 
@@ -89,7 +89,7 @@ def go(config: DictConfig):
                     "test_size": config['modeling']['test_size'],
                     "random_seed": config['modeling']['random_seed'],
                     "stratify_by": config['modeling']['stratify_by'],
-                }
+                },
             )
             pass
 
@@ -113,7 +113,7 @@ def go(config: DictConfig):
                     "rf_config": rf_config,
                     "max_tfidf_features": config['modeling']['max_tfidf_features'],
                     "output_artifact": "randmom_forest_export",
-                }
+                },
             )
 
         if "test_regression_model" in active_steps:
@@ -124,7 +124,7 @@ def go(config: DictConfig):
                 parameters={
                     "mlflow_model": "randmom_forest_export:prod",
                     "test_dataset": "test_data.csv:latest"
-                }
+                },
             )
 
 if __name__ == "__main__":

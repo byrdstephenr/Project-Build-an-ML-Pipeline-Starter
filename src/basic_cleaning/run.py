@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+##!/usr/bin/env python
 """
 Download from W&B the raw dataset and apply some basic data cleaning, exporting the result to a new artifact
 """
@@ -36,7 +36,7 @@ def go(args):
     
     idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
     df = df[idx].copy()
-
+    
     # Save the cleaned data
     logger.info('Saving and exporting cleaned data.')
     df.to_csv('clean_sample.csv', index=False)
