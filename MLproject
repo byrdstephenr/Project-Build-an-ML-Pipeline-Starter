@@ -1,4 +1,4 @@
-name: nyc_airbnb
+name: Project-Build-an-ML-Pipeline
 conda_env: conda.yml
 
 entry_points:
