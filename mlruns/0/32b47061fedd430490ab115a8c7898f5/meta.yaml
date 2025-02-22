@@ -1,0 +1,15 @@
+artifact_uri: file:///home/stbyrd/Project-Build-an-ML-Pipeline-Starter-main/Project-Build-an-ML-Pipeline-Starter-main/mlruns/0/32b47061fedd430490ab115a8c7898f5/artifacts
+end_time: 1740209205209
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 32b47061fedd430490ab115a8c7898f5
+run_name: colorful-shrike-912
+run_uuid: 32b47061fedd430490ab115a8c7898f5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740209147548
+status: 3
+tags: []
+user_id: stbyrd

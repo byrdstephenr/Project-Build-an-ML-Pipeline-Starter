@@ -1,0 +1,15 @@
+artifact_uri: file:///home/stbyrd/Project-Build-an-ML-Pipeline-Starter-main/Project-Build-an-ML-Pipeline-Starter-main/mlruns/0/09b9328d73454171897e54cf3c9f50bb/artifacts
+end_time: 1740208754722
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 09b9328d73454171897e54cf3c9f50bb
+run_name: melodic-wolf-128
+run_uuid: 09b9328d73454171897e54cf3c9f50bb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740208750170
+status: 4
+tags: []
+user_id: stbyrd

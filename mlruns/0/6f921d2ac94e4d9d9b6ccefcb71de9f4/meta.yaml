@@ -1,0 +1,15 @@
+artifact_uri: file:///home/stbyrd/Project-Build-an-ML-Pipeline-Starter-main/Project-Build-an-ML-Pipeline-Starter-main/mlruns/0/6f921d2ac94e4d9d9b6ccefcb71de9f4/artifacts
+end_time: 1740209332663
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6f921d2ac94e4d9d9b6ccefcb71de9f4
+run_name: calm-wren-992
+run_uuid: 6f921d2ac94e4d9d9b6ccefcb71de9f4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740209270291
+status: 4
+tags: []
+user_id: stbyrd

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/stbyrd/Project-Build-an-ML-Pipeline-Starter-main/Project-Build-an-ML-Pipeline-Starter-main/mlruns/0/f12e124feed042e59df292355473cada/artifacts
+end_time: 1740209333306
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: f12e124feed042e59df292355473cada
+run_name: respected-sheep-896
+run_uuid: f12e124feed042e59df292355473cada
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740209267116
+status: 4
+tags: []
+user_id: stbyrd
