@@ -1,5 +1,0 @@
-[2025-02-22 00:25:50,897][__main__][INFO] - WANDB_PROJECT set to: nyc_airbnb
-[2025-02-22 00:25:50,897][__main__][INFO] - WANDB_RUN_GROUP set to: development
-[2025-02-22 00:25:50,897][__main__][INFO] - Steps to execute: ['basic_cleaning']
-[2025-02-22 00:25:50,899][__main__][INFO] - Running 'basic_cleaning' step
-[2025-02-22 00:25:50,900][__main__][INFO] - min_price: 10, max_price: 350

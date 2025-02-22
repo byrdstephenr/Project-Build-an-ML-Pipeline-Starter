@@ -1,5 +1,0 @@
-[2025-02-22 00:27:50,230][__main__][INFO] - WANDB_PROJECT set to: nyc_airbnb
-[2025-02-22 00:27:50,231][__main__][INFO] - WANDB_RUN_GROUP set to: development
-[2025-02-22 00:27:50,231][__main__][INFO] - Steps to execute: ['data_check']
-[2025-02-22 00:27:50,232][__main__][INFO] - Running 'data_check' step
-[2025-02-22 00:28:52,667][__main__][ERROR] - Pipeline execution failed: Run (ID '6f921d2ac94e4d9d9b6ccefcb71de9f4') failed

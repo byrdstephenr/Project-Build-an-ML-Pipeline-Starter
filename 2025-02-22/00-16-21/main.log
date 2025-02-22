@@ -1,5 +1,0 @@
-[2025-02-22 00:16:21,641][__main__][INFO] - WANDB_PROJECT set to: nyc_airbnb
-[2025-02-22 00:16:21,641][__main__][INFO] - WANDB_RUN_GROUP set to: development
-[2025-02-22 00:16:21,641][__main__][INFO] - Steps to execute: ['download']
-[2025-02-22 00:16:21,642][__main__][INFO] - Running 'download' step
-[2025-02-22 00:16:25,849][__main__][ERROR] - Pipeline execution failed: Could not find subdirectory components#get_data of /tmp/tmpvv2bwc9a
