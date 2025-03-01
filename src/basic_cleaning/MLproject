@@ -4,40 +4,31 @@ conda_env: conda.yml
 entry_points:
   main:
     parameters:
+
       input_artifact:
-        description: Name of the input artifact
-        type: str
-        default: "sample.csv:latest"
+        description: Ininital artifact to be cleaned
+        type: string
 
-      output_artifact_name:
-        description: Name of the Weights & Biases output artifact to be created
-        type: str
-        default: "clean_sample1.csv"
+      output_artifact:
+        description: Output artifact for cleaned data
+        type: string
 
-      output_artifact_type:
-        description: Type of the Weights & Biases output artifact to be created
-        type: str
-        default: "cleaned_data"
+      output_type:
+        description: Type of the output dataset
+        type: string
 
-      output_artifact_description:
-        description: Description of the Weights & Biases output artifact to be created
-        type: str
-        default: "Cleaned dataset with outliers removed"
+      output_description:
+        description: Description of the output dataset
+        type: string
 
       min_price:
-        description: Minimum price to filter the input artifact
+        description: Minimum house price to be considered
         type: float
-        default: 10.0
 
       max_price:
-        description: Maximum price to filter the input artifact
+        description: Maximum house price to be considered
         type: float
-        default: 350.0
+
 
     command: >-
-        python run.py   --input_artifact {input_artifact} \
-                        --output_artifact_name {output_artifact_name} \
-                        --output_artifact_type {output_artifact_type} \
-                        --output_artifact_description {output_artifact_description} \
-                        --min_price {min_price} \
-                        --max_price {max_price}
+        python run.py  --input_artifact {input_artifact}  --output_artifact {output_artifact}  --output_type {output_type}  --output_description {output_description}  --min_price {min_price}  --max_price {max_price} 
