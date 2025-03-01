@@ -1,102 +1,128 @@
-##!/usr/bin/env python
+#!/usr/bin/env python
 """
-Download from W&B the raw dataset and apply some basic data cleaning, exporting the result to a new artifact
+Basic cleaning script for the Airbnb dataset.
 """
 import argparse
 import logging
 import wandb
 import pandas as pd
 
-# DO NOT MODIFY
+# Logging setup
 logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
 logger = logging.getLogger()
 
-# DO NOT MODIFY
+
+def clean_data(input_path, min_price, max_price):
+    """
+    Cleans the input dataset based on price and geographical bounds.
+
+    Args:
+        input_path (str): Path to the input CSV file.
+        min_price (float): Minimum price to filter rows.
+        max_price (float): Maximum price to filter rows.
+
+    Returns:
+        pd.DataFrame: Cleaned DataFrame.
+    """
+    logger.info(f"Loading dataset from {input_path}")
+    df = pd.read_csv(input_path)
+
+    # Filter rows based on price
+    logger.info(f"Filtering rows with price between {min_price} and {max_price}")
+    df = df[df["price"].between(min_price, max_price)].copy()
+
+    # Convert last_review to datetime
+    logger.info("Converting 'last_review' column to datetime format")
+    df["last_review"] = pd.to_datetime(df["last_review"], errors="coerce")
+
+    # Remove invalid geolocations
+    logger.info("Filtering rows with valid longitude and latitude ranges")
+    df = df[
+        df["longitude"].between(-74.25, -73.50)
+        & df["latitude"].between(40.5, 41.2)
+    ].copy()
+
+    return df
+
+
 def go(args):
-    
-    logger.info('Starting wandb run.')
-    run = wandb.init(
-        project = 'nyc_airbnb',
-        group = 'basic_cleaning',
-        job_type="basic_cleaning" 
-    )
+    """
+    Main function to execute the data cleaning process and log the artifact.
+    """
+    logger.info("Starting W&B run for basic cleaning")
+    run = wandb.init(job_type="basic_cleaning")
     run.config.update(args)
-    # Download input artifact. This will also log that this script is using this
-    # particular version of the artifact
-    logger.info('Fetching raw dataset.')
-    local_path = wandb.use_artifact('sample.csv:latest').file()
-    df = pd.read_csv(local_path)
-    
-    # EDA with arguments passed into the step
-    logger.info('Cleaning data.')
-    idx = df['price'].between(float(args.min_price), float(args.max_price))
-    df = df[idx].copy()
-    df['last_review'] = pd.to_datetime(df['last_review'])
-    # TODO: add code to fix the issue happened when testing the model
-    
-    idx = df['longitude'].between(-74.25, -73.50) & df['latitude'].between(40.5, 41.2)
-    df = df[idx].copy()
-    
-    # Save the cleaned data
-    logger.info('Saving and exporting cleaned data.')
-    df.to_csv('clean_sample.csv', index=False)
+
+    # Fetch input artifact
+    logger.info(f"Fetching input artifact: {args.input_artifact}")
+    artifact = run.use_artifact(args.input_artifact)
+    artifact_local_path = artifact.file()
+
+    # Clean data
+    df = clean_data(
+        input_path=artifact_local_path,
+        min_price=args.min_price,
+        max_price=args.max_price,
+    )
+
+    # Save cleaned data to a new file
+    output_file = "clean_sample1.csv"  # Updated to clean_sample1.csv
+    logger.info(f"Saving cleaned dataset to {output_file}")
+    df.to_csv(output_file, index=False)
+
+    # Log cleaned dataset as a new artifact
+    logger.info(f"Logging cleaned dataset as artifact: {args.output_artifact}")
     artifact = wandb.Artifact(
-        args.output_artifact,
-        type = args.output_type,
-        description = args.output_description
+        name=args.output_artifact,
+        type=args.output_type,
+        description=args.output_description,
     )
-    artifact.add_file('clean_sample.csv')
+    artifact.add_file(output_file)
     run.log_artifact(artifact)
-    
-# TODO: In the code below, fill in the data type for each argumemt. The data type should be str, float or int. 
-# TODO: In the code below, fill in a description for each argument. The description should be a string.
+
+    logger.info("Cleaning process completed and artifact logged successfully.")
+    run.finish()
+
+
 if __name__ == "__main__":
-
-    parser = argparse.ArgumentParser(description="A very basic data cleaning")
-  
-    parser.add_argument(
-        "--input_artifact", 
-        type = str,
-        help = 'Initial artifact to be cleaned',
-        required = True
-    )
+    parser = argparse.ArgumentParser(description="Basic Data Cleaning for Airbnb Dataset")
 
     parser.add_argument(
-        "--output_artifact_name", 
-        type = str,
-        help = 'Output artifact for cleaned data',
-        required = True
+        "--input_artifact",
+        type=str,
+        required=True,
+        help="Name of the input artifact (e.g., 'sample1.csv:latest')",
     )
-
     parser.add_argument(
-        "--output_artifact_type", 
-        type = str,
-        help = 'Type of the output dataset',
-        required = True
+        "--output_artifact",
+        type=str,
+        required=True,
+        help="Name of the output artifact (e.g., 'clean_sample1.csv')",
     )
-
     parser.add_argument(
-        "--output_artifact_description", 
-        type = str,
-        help = 'Description of the output dataset',
-        required = True
+        "--output_type",
+        type=str,
+        required=True,
+        help="Type of the output artifact (e.g., 'cleaned_data')",
     )
-
     parser.add_argument(
-        "--min_price", 
-        type = float,
-        help = 'Minimum house price to be considered',
-        required = True
+        "--output_description",
+        type=str,
+        required=True,
+        help="Description of the output artifact",
     )
-
+    parser.add_argument(
+        "--min_price",
+        type=float,
+        required=True,
+        help="Minimum price to include in the dataset",
+    )
     parser.add_argument(
         "--max_price",
-        type = float,
-        help = 'Maximum house price to be considered',
-        required = True
+        type=float,
+        required=True,
+        help="Maximum price to include in the dataset",
     )
 
-
     args = parser.parse_args()
-
     go(args)
