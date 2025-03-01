@@ -57,9 +57,9 @@ def go(config: DictConfig):
          env_manager="local",
          parameters={
              "input_artifact": "sample.csv:latest",
-             "output_artifact": "clean_sample.csv",
-             "output_type": "clean_sample",
-             "output_description": "Data with outliers and null values removed",
+             "output_artifact_name": "clean_sample.csv",
+             "output_artifact_type": "clean_sample",
+             "output_artifact_description": "Data with outliers and null values removed",
              "min_price": config['etl']['min_price'],
              "max_price": config['etl']['max_price']
          },
