@@ -62,21 +62,21 @@ if __name__ == "__main__":
     )
 
     parser.add_argument(
-        "--output_artifact", 
+        "--output_artifact_name", 
         type = str,
         help = 'Output artifact for cleaned data',
         required = True
     )
 
     parser.add_argument(
-        "--output_type", 
+        "--output_artifact_type", 
         type = str,
         help = 'Type of the output dataset',
         required = True
     )
 
     parser.add_argument(
-        "--output_description", 
+        "--output_artifact_description", 
         type = str,
         help = 'Description of the output dataset',
         required = True
