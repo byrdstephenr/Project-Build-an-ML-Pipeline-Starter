@@ -56,7 +56,7 @@ def go(config: DictConfig):
          "main",
          parameters={
              "input_artifact": "sample.csv:latest",
-             "output_artifact_name": "clean_sample1.csv",
+             "output_artifact_name": "clean_sample.csv",
              "output_artifact_type": "clean_data",
              "output_artifact_description": "Cleaned dataset with outliers removed",
              "min_price": config['etl']['min_price'],
