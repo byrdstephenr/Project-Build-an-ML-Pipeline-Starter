@@ -1,8 +1,5 @@
-[//]: # (Image References)
-
-[image1]: ./images/MLOps-process_fromNeptuneAI.PNG "ML workflow:"
-[image2]: ./images/mlops_nyc_airbnb_projectstructure.PNG "Project structure:"
-[image3]: ./images/nyc_airbnb_model-artifact_rf-regression_prod.PNG "End-to-end pipeline:"
+wandb: https://api.wandb.ai/links/byrdstephenr-western-governors-university/88lcn6cz
+github: https://github.com/byrdstephenr/Project-Build-an-ML-Pipeline-Starter
 
 # Build an ML Pipeline for Short-Term Rental Prices in NYC
 ## Business Use Case
